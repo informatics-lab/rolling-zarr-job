@@ -1,0 +1,18 @@
+image: informaticslab/pangeo-notebook:0.5.13 
+script: >-
+        while 
+        papermill 
+          s3://metoffice-aws-earth-zarr/nb_runners/2.roll_new_files_in_to_proto_zar.ipynb 
+          s3://metoffice-aws-earth-zarr/nb_logs/2.roll_new_files_in_to_proto_zar-`date -Iseconds`.ipynb 
+          -p do_download True 
+          --log-output 
+          --no-progress-bar ;
+        do :; done
+metaUpdateScript: >-
+        papermill 
+          s3://metoffice-aws-earth-zarr/nb_runners/3.up_data_metadata.ipynb 
+          s3://metoffice-aws-earth-zarr/nb_logs/3.up_data_metadata-`date -Iseconds`.ipynb 
+          -p zarr_path mo-atmospheric-mogreps-uk-prd-air_temperature-at_heights.zarr
+          --log-output 
+          --no-progress-bar
+pypath: "/s3/metoffice-aws-earth-zarr/nb_runners/"

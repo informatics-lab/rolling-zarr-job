@@ -1,0 +1,7 @@
+apiVersion: v1
+name: zarr-roller 
+version: 0.0.1
+description: Runs a papermill to update a rolling zarr
+maintainers:
+  - name: Theo McCaie
+    email: theo.mccaie@informaticslab.co.uk
