@@ -312,5 +312,4 @@ dependencies:
   - intake_iris=0.1.4=py_0
   - intake_s3_manifests=0.2.0=0
   - jade_utils=0.1.7=py_0
-  - intake-xarray=0.1.0=py_0
   - holoplot=0.1.0=py_0
